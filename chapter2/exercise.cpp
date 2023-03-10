@@ -124,15 +124,32 @@ bool Merge(SqList s1,SqList s2,SqList &s){
 /* 
     test8
  */
+void Reverse(Elemtype A[],int left,int right,int arraysize){
+    if (left>=right&&right>=arraysize)
+        return ;
+    for (int i = left,j=right; i <= left+(right-left)/2; i++)
+    {
+        Elemtype temp=A[i];
+        A[i]=A[j];
+        A[j--]=temp;
+    }
+    return;
+}
+void Exchange(Elemtype A[],int m,int n,int arraysize){
+    if (n+m!=arraysize)
+        return;    
+    Reverse(A,0,m-1,m);
+    Reverse(A,m,n-1,n);
+    Reverse(A,0,arraysize-1,arraysize);
+    return;
+}
 
 int main(){
-    // Elemtype a[]={3,5,2,2,7,1,4};
-    Elemtype a[]={1,1,2,2,3,3,4};
+    Elemtype a[]={3,5,2,2,7,1,4};
+    // Elemtype a[]={1,1,2,2,3,3,4};
     Elemtype b[]={1,3,3,4,4,7};
     SqList s=InitList(a,7);
-    SqList d=InitList(b,6);
-    SqList c=InitList(b,0);
-    printarr(s);
+    printarr(s.data,s.length);
     // ListInsert(s,3,3);
     // cout<<locateElem(s,2)<<endl;
 
@@ -148,9 +165,12 @@ int main(){
     // Del_x_1(s,2);
     // Del_s_t2(s,2,5);
     // Del_same(s);
-    Merge(s,d,c);
-
-    printarr(c);
+    // SqList d=InitList(b,6);
+    // SqList c=InitList(b,0);
+    // Merge(s,d,c);
+    Exchange(a,3,4,7);
+    printarr(a,7);
+    // printarr(s.data,s.length);
     
     
 }

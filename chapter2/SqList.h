@@ -66,7 +66,15 @@ Elemtype locateElem(SqList L,Elemtype e){
  */
 void printarr(SqList &L){
     cout<<'[';
-    for (int i = 0; i < L.length; i++)
+    for (int i = 0; i < L.length-1; i++)
         cout<<L.data[i]<<',';
+    cout<<L.data[L.length-1];
+    cout<<']'<<endl;
+}
+void printarr(Elemtype *L,int length){
+    cout<<'[';
+    for (int i = 0; i < length-1; i++)
+        cout<<L[i]<<',';
+    cout<<L[length-1];
     cout<<']'<<endl;
 }
