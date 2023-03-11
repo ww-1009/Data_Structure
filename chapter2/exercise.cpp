@@ -124,6 +124,7 @@ bool Merge(SqList s1,SqList s2,SqList &s){
 /* 
     test8
  */
+//反转left和right之间的元素
 void Reverse(Elemtype A[],int left,int right,int arraysize){
     if (left>=right&&right>=arraysize)
         return ;
@@ -168,8 +169,7 @@ int main(){
     // SqList d=InitList(b,6);
     // SqList c=InitList(b,0);
     // Merge(s,d,c);
-    Exchange(a,3,4,7);
-    printarr(a,7);
+    // Exchange(a,3,4,7);
     // printarr(s.data,s.length);
     
     
